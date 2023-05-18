@@ -1,0 +1,74 @@
+.baseCreateUser{
+    background-color: #798aa4;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.CreateUser{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #726e68;
+    width: 850px;
+    height: 430px;
+    margin: 0px auto;
+    margin-top: 10%;
+}
+
+.buttonCreateUser{
+    border-radius: 10px;
+    margin: 5px 150px;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #413e3e;
+    color: #b08d4b;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.divTxtCreateUser{
+    width: 200px;
+    float: left;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.divInputsCreateUser{
+    width: 300px;
+    float: left;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+
+.imgLogoCreateUser{
+    width: 300px;
+    float: left;
+    margin: 109px 15px;
+    cursor: pointer;
+}
+
+.inputCreateUser{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    width: 280px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.signIn{
+    width: 500px;
+    float: left;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.paragCreateUser{
+    margin: 8.5px 0px 20px 0px;
+    font-size: 20px;
+    color: white;
+}

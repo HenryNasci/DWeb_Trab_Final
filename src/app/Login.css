@@ -1,0 +1,73 @@
+.baseLog{
+    background-color: #798aa4;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.LOGIN{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #726e68;
+    width: 800px;
+    height: 330px;
+    margin: 0px auto;
+    margin-top: 13%;
+}
+
+.buttonLogin{
+    border-radius: 10px;
+    margin: 5px 100px;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #413e3e;
+    color: #b08d4b;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.divTxtLogin{
+    width: 150px;
+    float: left;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.divInputsLogin{
+    width: 300px;
+    float: left;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.imgLogoLogin{
+    width: 300px;
+    float: left;
+    margin: 59px 15px;
+    cursor: pointer;
+}
+
+.inputLogin{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    width: 280px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.login{
+    width: 450px;
+    float: left;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.paragLogin{
+    margin: 8.5px 0px 20px 0px;
+    font-size: 20px;
+    color: white;
+}

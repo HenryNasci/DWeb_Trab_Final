@@ -1,0 +1,68 @@
+.baseMainPage{
+    background-color: #798aa4;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.buttonLogMainPage{
+    border-radius: 10px;
+    padding: 2px;
+    width: 60px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #413e3e;
+    color: #b08d4b;
+    cursor: pointer;
+    justify-content: right;
+}
+
+.buttonSignMainPage{
+    border-radius: 10px;
+    padding: 2px;
+    width: 75px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #413e3e;
+    color: #b08d4b;
+    cursor: pointer;
+    margin-right: 5px;
+    justify-content: right;
+}
+
+.divDropdownsMainPage{
+    margin-right: 120px;
+}
+
+.dropdownMainPage{
+    margin: 0px 30px;
+    position: relative;
+    float: left;
+}
+
+.headerMainPage{
+    background-color: #726e68;
+    padding-right: 40px;
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imgLogoMainPage{
+    height: 10vh;
+    margin: 0vh 1vw 0vh 3vw;
+    cursor: pointer;
+    margin: 7.5px 0px;
+    float: left;
+}
+
+.titleMainPage{
+    color: #c9a156;
+    font-family: cursive;
+    margin: 20.5px 0px;
+    float: left;
+}
