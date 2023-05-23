@@ -6,7 +6,7 @@ function CreateUser() {
     return (
         <div className="baseCreateUser">
             <div className="CreateUser">
-                <img className='imgLogoCreateUser' alt='Imagem da Página Login' src={logo} onClick={handleOnClickToMain}></img>
+                <img className='imgLogoCreateUser' alt='Imagem da Página CreateUser' src={logo} onClick={handleOnClickToMain}></img>
                 <div className='signIn'>
                     <h1 style={{ color: 'white' }}>SIGN UP</h1>
                     <form >

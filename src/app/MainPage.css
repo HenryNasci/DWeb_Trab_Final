@@ -60,9 +60,15 @@
     float: left;
 }
 
-.titleMainPage{
-    color: #c9a156;
-    font-family: cursive;
-    margin: 20.5px 0px;
+.imgNameMainPage{
+    width: 270px;
+    margin: 24.5px 0px;
     float: left;
+}
+
+.imgSoppingCart{
+    width: 40px;
+    height: 40px;
+    margin: 0px 20px;
+    cursor: pointer;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import './MainPage.css';
 import logo from '../img/Logo_v2.png';
+import name from '../img/nome2.png';
+import shopping_cart from '../img/shopping-cart.png';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 function MainPage() {
@@ -10,8 +12,8 @@ function MainPage() {
         <div className="baseMainPage">
             <div className="headerMainPage">
                 <div className="divLogoMainPage">
-                    <img className='imgLogoMainPage' alt='Imagem da Página Login' src={logo} onClick={handleOnClickToMain}></img>
-                    <h1 className="titleMainPage">Gold Saddle</h1>
+                    <img className='imgLogoMainPage' alt='Imagem da Página MainPage' src={logo} onClick={handleOnClickToMain}></img>
+                    <img className='imgNameMainPage' alt='Imagem da Página MainPage' src={name} onClick={handleOnClickToMain}></img>
                 </div>
                 <div className='divDropdownsMainPage'>
                     <Dropdown className='dropdownMainPage'>
@@ -60,6 +62,7 @@ function MainPage() {
                     </Dropdown>
                 </div>
                 <div className='btnLog'>
+                    <img className='imgSoppingCart' alt='Imagem do carrinho de compras' src={shopping_cart} ></img>
                     <button className="buttonSignMainPage" onClick={handleOnClickToSign}>Sign up</button>
                     <button className="buttonLogMainPage" onClick={handleOnClickToLog}>Login</button>
                 </div>
