@@ -1,11 +1,10 @@
-.baseMainPage{
+.baseProduto{
     background-color: #798aa4;
     width: 100vw;
     height: 100vh;
-    display: flex;
 }
 
-.buttonLogMainPage{
+.buttonLogProduto{
     border-radius: 10px;
     padding: 2px;
     width: 60px;
@@ -18,7 +17,7 @@
     justify-content: right;
 }
 
-.buttonSignMainPage{
+.buttonSignProduto{
     border-radius: 10px;
     padding: 2px;
     width: 75px;
@@ -32,21 +31,21 @@
     justify-content: right;
 }
 
-.divDropdownsMainPage{
+.divDropdownsProduto{
     margin-right: 120px;
 }
 
-.divLogoMainPage{
+.divLogoProduto{
     cursor: pointer;
 }
 
-.dropdownMainPage{
+.dropdownProduto{
     margin: 0px 30px;
     position: relative;
     float: left;
 }
 
-.headerMainPage{
+.headerProduto{
     background-color: #726e68;
     padding-right: 40px;
     width: 100vw;
@@ -56,7 +55,7 @@
     align-items: center;
 }
 
-.imgLogoMainPage{
+.imgLogoProduto{
     height: 10vh;
     margin: 0vh 1vw 0vh 3vw;
     cursor: pointer;
@@ -64,7 +63,7 @@
     float: left;
 }
 
-.imgNameMainPage{
+.imgNameProduto{
     width: 270px;
     margin: 24.5px 0px;
     float: left;
@@ -75,4 +74,34 @@
     height: 40px;
     margin: 0px 20px;
     cursor: pointer;
+}
+
+.bodyProduto{
+    width: 50%;
+    margin: 5% auto;
+}
+
+.imgProduto{
+  width: 50%;
+  float: left;
+}
+
+.divInfoProduto{
+    width: 50%;
+    padding-left: 5%;
+    padding-top: 10%;
+    float: left;
+}
+
+.buttonAddProduto{
+    border-radius: 10px;
+    margin: 5px 100px;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #413e3e;
+    color: #b08d4b;
+    cursor: pointer;
+    justify-content: center;
 }

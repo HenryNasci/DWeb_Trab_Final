@@ -3,6 +3,11 @@ import './Login.css';
 import logo from '../img/Logo_v2.png';
 
 function Login() {
+    
+    function handleOnClickToMain() {
+        window.location.href = './';
+    }
+
     return (
         <div className="baseLog">
             <div className="LOGIN">
@@ -15,10 +20,10 @@ function Login() {
                             <b><p className='paragLogin'>Password:  </p></b>
                         </div>
                         <div className='divInputsLogin'>
-                            <input className='inputLogin' type='text' placeholder=''></input>
-                            <input className='inputLogin' type='password' placeholder=''></input>
+                            <input className='inputLogin' type='text' ></input>
+                            <input className='inputLogin' type='password' ></input>
                         </div>    
-                        <button className='buttonLogin' type='submit'>Log in</button>
+                        <button className='buttonLogin' type='submit' >Log in</button>
                     </form>
                     
                     <a href='./CreateUser' style={{color: 'white'}}>Don't have an acount?</a>
@@ -28,8 +33,5 @@ function Login() {
     );
 }
 
-function handleOnClickToMain() {
-    window.location.href = './';
-}
   
 export default Login;
