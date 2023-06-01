@@ -16,21 +16,25 @@ class CreateUser extends Component {
 
     handleChangeEmail = (event) => {
         this.setState({ email: event.target.value });
+        console.log(this.state.email);
     }
 
     handleChangeUsername = (event) => {
         this.setState({ username: event.target.value });
+        console.log(this.state.username);
     }
 
     handleChangePasswd = (event) => {
         this.setState({ password: event.target.value });
+        console.log(this.state.password);
     }
 
     handleChangeConfPasswd = (event) => {
         this.setState({ confirmPassword: event.target.value });
+        console.log(this.state.confirmPassword);
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = (event) => {        
         event.preventDefault();
         if (this.state.password === this.state.confirmPassword) {
             fetch('https://localhost:7085/Clientes/Create', {
@@ -65,7 +69,7 @@ class CreateUser extends Component {
         return (
             <div className="baseCreateUser">
                 <div className="CreateUser">
-                    <img className='imgLogoCreateUser' alt='Imagem da Página CreateUser' src={logo} onClick={handleOnClickToMain}></img>
+                    <img className='imgLogoCreateUser' alt='Imagem da Página CreateUser' src={logo} onClick={this.handleOnClickToMain}></img>
                     <div className='signIn'>
                         <h1 style={{ color: 'white' }}>SIGN UP</h1>
                         <form >
@@ -89,10 +93,13 @@ class CreateUser extends Component {
             </div>
         )
     }
+
+    handleOnClickToMain() {
+        window.location.href = './';
+    }
+
 }
 
-function handleOnClickToMain() {
-    window.location.href = './';
-}
+
 
 export default CreateUser;

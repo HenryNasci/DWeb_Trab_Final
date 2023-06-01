@@ -12,7 +12,7 @@ class MainPage extends Component {
         return (
             <div className="baseMainPage">
                 <div className="headerMainPage">
-                    <div className="divLogoMainPage" onClick={handleOnClickToMain}>
+                    <div className="divLogoMainPage" onClick={this.handleOnClickToMain}>
                         <img className='imgLogoMainPage' alt='Imagem da Página MainPage' src={logo} ></img>
                         <img className='imgNameMainPage' alt='Imagem da Página MainPage' src={name} ></img>
                     </div>
@@ -64,26 +64,29 @@ class MainPage extends Component {
                     </div>
                     <div className='btnLog'>
                         <img className='imgSoppingCart' alt='Imagem do carrinho de compras' src={shopping_cart} ></img>
-                        <button className="buttonSignMainPage" onClick={handleOnClickToSign}>Sign up</button>
-                        <button className="buttonLogMainPage" onClick={handleOnClickToLog}>Login</button>
+                        <button className="buttonSignMainPage" onClick={this.handleOnClickToSign}>Sign up</button>
+                        <button className="buttonLogMainPage" onClick={this.handleOnClickToLog}>Login</button>
                     </div>
                 </div>
             </div>
         );
     }
-}
 
-    function handleOnClickToLog() {
+    handleOnClickToLog() {
         window.location.href = './Login';
     }
     
-    function handleOnClickToSign() {
+    handleOnClickToSign() {
         window.location.href = './CreateUser';
     }
     
-    function handleOnClickToMain() {
+    handleOnClickToMain() {
         window.location.href = './';
     }
+
+}
+
+    
 
 export default MainPage;
 
