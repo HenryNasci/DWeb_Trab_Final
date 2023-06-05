@@ -34,7 +34,7 @@ class CreateUser extends Component {
         console.log(this.state.confirmPassword);
     }
 
-    handleSubmit = (event) => {        
+    handleSubmit = (event) => {
         event.preventDefault();
         if (this.state.password === this.state.confirmPassword) {
             fetch('https://localhost:7085/Clientes/Create', {
@@ -73,20 +73,14 @@ class CreateUser extends Component {
                     <div className='signIn'>
                         <h1 style={{ color: 'white' }}>SIGN UP</h1>
                         <form >
-                            <div className='divTxtCreateUser'>
-                                <b><p className='paragCreateUser'>Email:  </p></b>
-                                <b><p className='paragCreateUser'>Username:  </p></b>
-                                <b><p className='paragCreateUser'>Password:  </p></b>
-                                <b><p className='paragCreateUser'>Confirm Password:  </p></b>
-                            </div>
                             <div className='divInputsCreateUser'>
-                                <input className='inputCreateUser' type='text' onChange={this.handleChangeEmail}></input>
-                                <input className='inputCreateUser' type='text' onChange={this.handleChangeUsername}></input>
-                                <input className='inputCreateUser' type='password' onChange={this.handleChangePasswd}></input>
-                                <input className='inputCreateUser' type='password' onChange={this.handleChangeConfPasswd}></input>
+                                <input className='inputCreateUser' type='text' placeholder='Email' onChange={this.handleChangeEmail}></input>
+                                <input className='inputCreateUser' type='text' placeholder='Username' onChange={this.handleChangeUsername}></input>
+                                <input className='inputCreateUser' type='password' placeholder='Password' onChange={this.handleChangePasswd}></input>
+                                <input className='inputCreateUser' type='password' placeholder='Confirm Password' onChange={this.handleChangeConfPasswd}></input>
                             </div>
                             <button className='buttonCreateUser' type='submit' onClick={this.handleSubmit}>Sign Up</button>
-                            <a href='./Login' style={{color: 'white'}}>Already have an account?</a>
+                            <a href='./Login' style={{ color: 'white' }}>Already have an account?</a>
                         </form>
                     </div>
                 </div>

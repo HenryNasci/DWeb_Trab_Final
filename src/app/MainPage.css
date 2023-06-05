@@ -1,11 +1,11 @@
-.baseMainPage{
+.baseMainPage {
     background-color: #798aa4;
     width: 100vw;
     height: 100vh;
     display: flex;
 }
 
-.buttonLogMainPage{
+.buttonLogMainPage {
     border-radius: 10px;
     padding: 2px;
     width: 60px;
@@ -18,7 +18,7 @@
     justify-content: right;
 }
 
-.buttonSignMainPage{
+.buttonSignMainPage {
     border-radius: 10px;
     padding: 2px;
     width: 75px;
@@ -32,22 +32,25 @@
     justify-content: right;
 }
 
-.divDropdownsMainPage{
+.divDropdownsMainPage {
     margin-right: 120px;
 }
 
-.divLogoMainPage{
+.divLogoMainPage {
     cursor: pointer;
 }
 
-.dropdownMainPage{
+.dropdownMainPage {
     margin: 0px 30px;
     position: relative;
+    background: transparent;
     float: left;
 }
 
-.headerMainPage{
-    background-color: #726e68;
+.headerMainPage {
+    background: url(../img/background1.jpg);
+    background-size: 1800px 700px;
+    background-position: -200px -20px;
     padding-right: 40px;
     width: 100vw;
     height: 12vh;
@@ -56,7 +59,7 @@
     align-items: center;
 }
 
-.imgLogoMainPage{
+.imgLogoMainPage {
     height: 10vh;
     margin: 0vh 1vw 0vh 3vw;
     cursor: pointer;
@@ -64,13 +67,13 @@
     float: left;
 }
 
-.imgNameMainPage{
+.imgNameMainPage {
     width: 270px;
     margin: 24.5px 0px;
     float: left;
 }
 
-.imgSoppingCart{
+.imgSoppingCart {
     width: 40px;
     height: 40px;
     margin: 0px 20px;

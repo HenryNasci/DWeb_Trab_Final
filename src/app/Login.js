@@ -3,7 +3,7 @@ import './Login.css';
 import logo from '../img/Logo_v2.png';
 
 class Login extends Component {
-    
+
     constructor(props) {
         super(props);
         this.state = {
@@ -56,17 +56,17 @@ class Login extends Component {
                         <h1 style={{ color: 'white' }}>LOG IN</h1>
                         <form >
                             <div className='divTxtLogin'>
-                                <b><p className='paragLogin'>Username:  </p></b>
-                                <b><p className='paragLogin'>Password:  </p></b>
+                                <b><p className='paragLogin'>  </p></b>
+                                <b><p className='paragLogin'>  </p></b>
                             </div>
                             <div className='divInputsLogin'>
-                                <input className='inputLogin' type='text' onChange={this.handleCheckUsername}></input>
-                                <input className='inputLogin' type='password' onChange={this.handleCheckpasswd}></input>
-                            </div>    
+                                <input className='inputLogin' type='text' placeholder='Username' onChange={this.handleCheckUsername}></input>
+                                <input className='inputLogin' type='password' placeholder='Password' onChange={this.handleCheckpasswd}></input>
+                            </div>
                             <button className='buttonLogin' type='submit' >Log in</button>
                         </form>
-                        
-                        <a href='./CreateUser' style={{color: 'white'}}>Don't have an acount?</a>
+
+                        <a href='./CreateUser' style={{ color: 'white' }}>Don't have an acount?</a>
                     </div>
                 </div>
             </div>
@@ -79,5 +79,5 @@ class Login extends Component {
 
 }
 
-  
+
 export default Login;

@@ -1,11 +1,12 @@
-.baseCreateUser{
-    background-color: #798aa4;
+.baseCreateUser {
+    background: url(../img/background1.jpg);
+    background-size: 1920px 1080px;
     width: 100vw;
     height: 100vh;
     display: flex;
 }
 
-.CreateUser{
+.CreateUser {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -13,62 +14,79 @@
     width: 850px;
     height: 430px;
     margin: 0px auto;
-    margin-top: 10%;
+    margin-top: 13%;
+    background: transparent;
+    border: 2px solid;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
 }
 
-.buttonCreateUser{
-    border-radius: 10px;
-    margin: 5px 150px;
-    width: 200px;
+.buttonCreateUser {
+    margin: 10px 200px;
+    border-radius: 0px;
+    width: 100px;
     height: 35px;
     font-size: 20px;
-    text-align: center;
-    background-color: #413e3e;
-    color: #b08d4b;
+    background-color: transparent;
+    color: white;
     cursor: pointer;
     justify-content: center;
 }
 
-.divTxtCreateUser{
+.divTxtCreateUser {
     width: 200px;
     float: left;
     text-align: center;
     margin: 20px 0px;
 }
 
-.divInputsCreateUser{
-    width: 300px;
+.divInputsCreateUser {
+    width: 400px;
     float: left;
     text-align: center;
-    margin: 20px 0px;
+    margin: 20px 50px;
 }
 
 
-.imgLogoCreateUser{
+.imgLogoCreateUser {
     width: 300px;
     float: left;
     margin: 109px 15px;
     cursor: pointer;
 }
 
-.inputCreateUser{
-    border-radius: 10px;
-    padding: 5px;
+.inputCreateUser {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 2px solid;
+    border-color: aliceblue;
+    position: relative;
+    outline: none;
     margin: 5px;
-    width: 280px;
+    width: 300px;
     height: 40px;
     font-size: 20px;
+    background: transparent;
 }
 
-.signIn{
+.signIn {
     width: 500px;
     float: left;
     text-align: center;
     margin: 20px 0px;
 }
 
-.paragCreateUser{
+.paragCreateUser {
     margin: 8.5px 0px 20px 0px;
     font-size: 20px;
     color: white;
+}
+
+.inputCreateUser {
+    color: aliceblue;
+}
+
+::placeholder {
+    color: aliceblue;
 }

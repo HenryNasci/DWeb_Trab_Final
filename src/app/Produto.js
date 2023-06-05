@@ -86,6 +86,8 @@ function Produto() {
                 <div className="divInfoProduto">
                     <h1 className='h1Produto'>Nome do Produto</h1>
                     <br></br>
+                    <h3 className='h3Produto'>Marca do Produto</h3>
+                    <br></br>
                     <h3 className='h3Produto'>Preço do Produto</h3>
                     <br></br>
                     <button className="buttonAddProduto">Add to Cart</button>
