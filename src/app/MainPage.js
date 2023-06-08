@@ -104,6 +104,19 @@ function MainPage() {
           </button>
         </div>
       </div>
+      <div className="bodyMainPage">
+        <div className="divProdutosMainPage">
+          {posts.map((post) => (
+            <div className="divProdutoMainPage">
+              <img className="imgProdutoMainPage" alt="Imagem do Produto" src={post.img} />
+              <div className="divInfoProdutoMainPage">
+                <p className="pNomeProdutoMainPage">{post.nome}</p>
+                <p className="pPrecoProdutoMainPage">{post.preco}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>        
     </div>
   );
 };
