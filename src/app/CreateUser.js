@@ -64,6 +64,10 @@ class CreateUser extends Component {
             console.log('Passwords do not match!');
         }
     }
+    
+    handleOnClickToMain() {
+        window.location.href = './';
+    }
 
     render() {
         return (
@@ -87,11 +91,6 @@ class CreateUser extends Component {
             </div>
         )
     }
-
-    handleOnClickToMain() {
-        window.location.href = './';
-    }
-
 }
 
 

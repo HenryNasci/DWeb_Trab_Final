@@ -46,6 +46,10 @@ class Login extends Component {
                 console.log('Error logging in!');
             });
     }
+    
+    handleOnClickToMain() {
+        window.location.href = './';
+    }
 
     render() {
         return (
@@ -72,11 +76,6 @@ class Login extends Component {
             </div>
         );
     }
-
-    handleOnClickToMain() {
-        window.location.href = './';
-    }
-
 }
 
 
