@@ -1,7 +1,6 @@
 .baseProduto{
     background-color: #798aa4;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
 }
 
 .buttonLogProduto{
@@ -31,12 +30,48 @@
     justify-content: right;
 }
 
+.bodyMainPage {
+    background-color: #798aa4;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
 .divDropdownsProduto{
     margin-right: 120px;
 }
 
+.divInfoProdutoMainPage {
+    flex-direction: row;
+    color:white;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
 .divLogoProduto{
     cursor: pointer;
+}
+
+.divProdutosMainPage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px auto;
+    width: 80%;
+}
+
+.divProdutoMainPage{
+    width: 250px;
+    height: 350px;;
+    margin: 20px 10px;
+    background-color: #413e3e;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dropdownProduto{
@@ -46,7 +81,10 @@
 }
 
 .headerProduto{
-    background-color: #726e68;
+    position: fixed;
+    background: url(../img/background1.jpg);
+    background-size: 1800px 700px;
+    background-position: -200px -20px;
     padding-right: 40px;
     width: 100vw;
     height: 12vh;
@@ -74,11 +112,6 @@
     height: 40px;
     margin: 0px 20px;
     cursor: pointer;
-}
-
-.bodyProduto{
-    width: 50%;
-    margin: 5% auto;
 }
 
 .imgProduto{

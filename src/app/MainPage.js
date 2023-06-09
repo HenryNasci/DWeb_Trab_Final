@@ -21,13 +21,17 @@ function MainPage() {
       });
   }, []);
 
+  const handleOnClickToProd = () => {
+    window.location.href = './Produto';
+  };
+
   return (
     <div className="baseMainPage">
       <Header />
       <div className="bodyMainPage">
         <div className="divProdutosMainPage">
           {posts.map((post) => (
-            <div className="divProdutoMainPage">
+            <div className="divProdutoMainPage" onClick={handleOnClickToProd}>
               <img className="imgProdutoMainPage" alt="Imagem do Produto" src={post.img} />
               <div className="divInfoProdutoMainPage">
                 <p className="nomeProdutoMainPage">{post.nome}</p>
