@@ -10,7 +10,7 @@ function MainPage() {
       method: 'GET',
       redirect: 'follow'
     };
-    fetch("Produtos", requestOptions)
+    fetch("api/ProdutosController2", requestOptions)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -30,8 +30,9 @@ function MainPage() {
             <div className="divProdutoMainPage">
               <img className="imgProdutoMainPage" alt="Imagem do Produto" src={post.img} />
               <div className="divInfoProdutoMainPage">
-                <p className="pNomeProdutoMainPage">{post.nome}</p>
-                <p className="pPrecoProdutoMainPage">{post.preco}</p>
+                <p className="nomeProdutoMainPage">{post.nome}</p>
+                <p className="marcaProdutoMainPage">{post.marca}</p>
+                <p className="precoProdutoMainPage">{post.preco}€</p>
               </div>
             </div>
           ))}
