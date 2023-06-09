@@ -19,7 +19,7 @@ function Header() {
     };
 
     return(
-        <div className="headerMainPage">
+      <div className="headerMainPage">
         <div className="divLogoMainPage" onClick={handleOnClickToMain}>
           <img className="imgLogoMainPage" alt="Imagem da Página MainPage" src={logo} />
           <img className="imgNameMainPage" alt="Imagem da Página MainPage" src={name} />
