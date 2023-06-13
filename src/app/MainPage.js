@@ -21,7 +21,8 @@ function MainPage() {
       });
   }, []);
 
-  const handleOnClickToProd = () => {
+  const handleOnClickToProd = (index) => {
+    sessionStorage.setItem('produto', JSON.stringify(posts[index]));
     window.location.href = './Produto';
   };
 
@@ -30,9 +31,9 @@ function MainPage() {
       <Header />
       <div className="bodyMainPage">
         <div className="divProdutosMainPage">
-          {posts.map((post) => (
-            <div className="divProdutoMainPage" onClick={handleOnClickToProd}>
-              <img className="imgProdutoMainPage" alt="Imagem do Produto" src={post.img} />
+          {posts.map((post, index) => (
+            <div className="divProdutoMainPage" onClick={() => handleOnClickToProd(index)}>
+              <img className="imgProdutoMainPage" alt="Imagem do Produto" src={"https://localhost:7085/imagens/" + post.fotos[0].nomeFicheiro} />
               <div className="divInfoProdutoMainPage">
                 <p className="nomeProdutoMainPage">{post.nome}</p>
                 <p className="marcaProdutoMainPage">{post.marca}</p>
@@ -41,7 +42,7 @@ function MainPage() {
             </div>
           ))}
         </div>
-      </div>        
+      </div>
     </div>
   );
 };
