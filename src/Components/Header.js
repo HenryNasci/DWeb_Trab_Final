@@ -32,10 +32,11 @@ function Header() {
 
           <Dropdown.Menu>
             <Dropdown.Item>Boots</Dropdown.Item>
-            <Dropdown.Item>Helmets</Dropdown.Item>
-            <Dropdown.Item>Breeches</Dropdown.Item>
+            <Dropdown.Item>Men's Helmets</Dropdown.Item>
+            <Dropdown.Item>Women's Helmets</Dropdown.Item>
+            <Dropdown.Item>Men's Breeches</Dropdown.Item>
+            <Dropdown.Item>Women's Breeches</Dropdown.Item>
             <Dropdown.Item>Belts</Dropdown.Item>
-            <Dropdown.Item>Jackets</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <Dropdown className="dropdownMainPage">
@@ -60,6 +61,7 @@ function Header() {
             <Dropdown.Item>Forks</Dropdown.Item>
             <Dropdown.Item>Shovels</Dropdown.Item>
             <Dropdown.Item>Hay nets</Dropdown.Item>
+            <Dropdown.Item>Brooms</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <Dropdown className="dropdownMainPage">

@@ -1,10 +1,10 @@
-.baseProduto{
+.baseProduto {
     background-color: #798aa4;
     width: 100%;
     height: 100vh;
 }
 
-.buttonLogProduto{
+.buttonLogProduto {
     border-radius: 10px;
     padding: 2px;
     width: 60px;
@@ -17,7 +17,7 @@
     justify-content: right;
 }
 
-.buttonSignProduto{
+.buttonSignProduto {
     border-radius: 10px;
     padding: 2px;
     width: 75px;
@@ -36,11 +36,11 @@
     display: flex;
 }
 
-.divDropdownsProduto{
+.divDropdownsProduto {
     margin-right: 120px;
 }
 
-.divImgProduto{
+.divImgProduto {
     width: 100%;
     margin-top: 15%;
     display: flex;
@@ -48,7 +48,7 @@
     align-items: center;
 }
 
-.divInfoProduto{
+.divInfoProduto {
     width: 50%;
     float: left;
     margin-top: 15%;
@@ -59,17 +59,17 @@
 }
 
 
-.divLogoProduto{
+.divLogoProduto {
     cursor: pointer;
 }
 
-.dropdownProduto{
+.dropdownProduto {
     margin: 0px 30px;
     position: relative;
     float: left;
 }
 
-.headerProduto{
+.headerProduto {
     position: fixed;
     background: url(../img/background1.jpg);
     background-size: 1800px 700px;
@@ -82,7 +82,7 @@
     align-items: center;
 }
 
-.imgLogoProduto{
+.imgLogoProduto {
     height: 10vh;
     margin: 0vh 1vw 0vh 3vw;
     cursor: pointer;
@@ -90,26 +90,26 @@
     float: left;
 }
 
-.imgNameProduto{
+.imgNameProduto {
     width: 270px;
     margin: 24.5px 0px;
     float: left;
 }
 
-.imgSoppingCart{
+.imgSoppingCart {
     width: 40px;
     height: 40px;
     margin: 0px 20px;
     cursor: pointer;
 }
 
-.imgProduto{
+.imgProduto {
     width: 50%;
     float: left;
     margin-left: 50%;
 }
 
-.buttonAddProduto{
+.buttonAddProduto {
     border-radius: 10px;
     margin: 5px 100px;
     width: 200px;

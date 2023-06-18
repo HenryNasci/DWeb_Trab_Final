@@ -5,6 +5,7 @@ import Header from '../Components/Header'
 function MainPage() {
   const [posts, setPosts] = useState([]);
 
+
   useEffect(() => {
     var requestOptions = {
       method: 'GET',
@@ -41,6 +42,13 @@ function MainPage() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="divContatoEmpresa">
+          <h2>Informações de Contacto</h2>
+          <p>Morada: Rua cavaleiros de cristo, 34, Tomar</p>
+          <p>Telefone: +351 938294618</p>
+          <p>Email: info@goldsaddle.pt</p>
+          <button onclick="redirectToSobre()">Sobre Nós</button>
         </div>
       </div>
     </div>

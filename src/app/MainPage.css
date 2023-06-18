@@ -64,11 +64,12 @@
 }
 
 .divProdutoMainPage {
+    border: #413e3e;
+    border: solid 3px;
     width: 250px;
     height: 350px;
-    ;
     margin: 20px 10px;
-    background-color: #413e3e;
+    background-color: white;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -89,7 +90,7 @@
 }
 
 .headerMainPage {
-    position: fixed;
+    position: static;
     background: url(../img/background1.jpg);
     background-size: 1800px 700px;
     background-position: -200px -20px;
@@ -126,4 +127,52 @@
     height: 40px;
     margin: 0px 20px;
     cursor: pointer;
+}
+
+.divContatoEmpresa {
+    background-color: #413e3e;
+    color: aliceblue;
+    margin-top: 20px;
+    width: auto;
+    margin: left;
+}
+
+.nomeProdutoMainPage {
+    font-weight: bold;
+    color: #413e3e;
+    float: left;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    padding-right: 18px;
+    padding-left: 18px;
+    text-align: center;
+}
+
+.marcaProdutoMainPage {
+    color: #413e3e;
+    float: left;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    padding-right: 18px;
+    padding-left: 18px;
+    text-align: center;
+
+}
+
+.precoProdutoMainPage {
+    color: #413e3e;
+    float: left;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    padding-right: 18px;
+    padding-left: 18px;
+    text-align: center;
+}
+
+.imgProdutoMainPage {
+    height: 200px;
+    margin: auto;
 }
