@@ -1,8 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './Produto.css';
-import Header from '../Components/Header'
+import Header from '../Components/Header';
+import Info from '../Components/Info';
+import { useNavigate } from 'react-router-dom';
 
 function Produto() {
+    const navigate = useNavigate();
+
+    const handleOnClickAddCarrinho = (post) => {
+        navigate(
+            '/',
+            {
+                state: { prodProduto: post }
+            }
+        );
+    };
 
     const post = JSON.parse(sessionStorage.getItem('produto'));
     console.log(post);
@@ -21,8 +33,11 @@ function Produto() {
                     <br></br>
                     <h3 className='h3Produto'>{post.preco}€</h3>
                     <br></br>
-                    <button className="buttonAddProduto">Add to Cart</button>
+                    <button className="buttonAddProduto" onClick={() => handleOnClickAddCarrinho(post)}>Add to Cart</button>
                 </div>
+            </div>
+            <div className='divInfoEmpresa'>
+                <Info />
             </div>
         </div>
     );

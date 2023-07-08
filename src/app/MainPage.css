@@ -38,6 +38,12 @@
     flex-direction: column;
 }
 
+.divContatoEmpresa {
+    background-color: #413e3e;
+    color: aliceblue;
+    padding: 1%;
+}
+
 .divDropdownsMainPage {
     margin-right: 120px;
 }
@@ -90,7 +96,7 @@
 }
 
 .headerMainPage {
-    position: static;
+    position: fixed;
     background: url(../img/background1.jpg);
     background-size: 1800px 700px;
     background-position: -200px -20px;
@@ -100,6 +106,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 999;
 }
 
 .imgLogoMainPage {
@@ -127,14 +134,6 @@
     height: 40px;
     margin: 0px 20px;
     cursor: pointer;
-}
-
-.divContatoEmpresa {
-    background-color: #413e3e;
-    color: aliceblue;
-    margin-top: 20px;
-    width: auto;
-    margin: left;
 }
 
 .nomeProdutoMainPage {

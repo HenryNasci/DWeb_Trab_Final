@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import './MainPage.css';
-import Header from '../Components/Header'
+import Header from '../Components/Header';
+import Info from '../Components/Info';
+import { useLocation } from 'react-router-dom';
 
 function MainPage() {
   const [posts, setPosts] = useState([]);
+  const [carrinho, setCarrinho] = useState([]);
+
+  const location = useLocation();
+  useEffect(() => {
+    if (location.state && location.state.prodProduto) {
+      const produtoObjt = location.state.prodProduto;
+      setCarrinho([...carrinho, produtoObjt]);
+    }
+  }, [location.state]);
+  console.log('carrinho');
+  console.log(carrinho);
 
 
   useEffect(() => {
@@ -43,12 +56,8 @@ function MainPage() {
             </div>
           ))}
         </div>
-        <div className="divContatoEmpresa">
-          <h2>Informações de Contacto</h2>
-          <p>Morada: Rua cavaleiros de cristo, 34, Tomar</p>
-          <p>Telefone: +351 938294618</p>
-          <p>Email: info@goldsaddle.pt</p>
-          <button onclick="redirectToSobre()">Sobre Nós</button>
+        <div className="divInfoEmpresa">
+          <Info />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 .baseProduto {
     background-color: #798aa4;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 .buttonLogProduto {
@@ -33,6 +33,7 @@
 
 .bodyProduto {
     width: 80%;
+    height: 100%;
     display: flex;
 }
 
@@ -46,6 +47,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.divInfoEmpresa {
+    margin-top: 6%;
 }
 
 .divInfoProduto {

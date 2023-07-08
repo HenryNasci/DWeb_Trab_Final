@@ -3,6 +3,7 @@ import logo from '../img/Logo_v2.png';
 import name from '../img/nome2.png';
 import shopping_cart from '../img/shopping-cart.png';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { Link } from 'react-router-dom';
 
 function Header() {
 
