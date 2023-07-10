@@ -39,7 +39,7 @@ function CartPage() {
                 {cartItems.length === 0 ? (
                     <p>O carrinho está vazio.</p>
                 ) : (
-                    <ul className="cartItems">
+                    <div className="cartItems">
                         {cartItems.map((item, index) => (
                             <li key={index} className="cartItem">
                                 <div className="cartItemInfo">
@@ -56,7 +56,7 @@ function CartPage() {
                         ))}
                         <p className="cartTotalPrice">Total: {totalPrice}€</p>
 
-                    </ul>
+                    </div>
                 )}
             </div>
         </div>
