@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import './Produto.css';
 import Header from '../Components/Header';
 import Info from '../Components/Info';
@@ -8,12 +7,16 @@ function Produto() {
     const navigate = useNavigate();
 
     const handleOnClickAddCarrinho = (post) => {
-        navigate(
-            '/',
-            {
-                state: { prodProduto: post }
-            }
-        );
+        const carrinho = JSON.parse(sessionStorage.getItem('carrinho'));
+        if (carrinho) {
+            carrinho.push(post);
+            sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
+        } else {
+            sessionStorage.setItem('carrinho', JSON.stringify([post]));
+        }
+        console.log('carrinho');
+        console.log(carrinho);
+        navigate('/');
     };
 
     const post = JSON.parse(sessionStorage.getItem('produto'));

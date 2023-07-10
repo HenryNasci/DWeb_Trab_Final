@@ -2,22 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './MainPage.css';
 import Header from '../Components/Header';
 import Info from '../Components/Info';
-import { useLocation } from 'react-router-dom';
 
 function MainPage() {
   const [posts, setPosts] = useState([]);
   const [carrinho, setCarrinho] = useState([]);
-
-  const location = useLocation();
-  useEffect(() => {
-    if (location.state && location.state.prodProduto) {
-      const produtoObjt = location.state.prodProduto;
-      setCarrinho([...carrinho, produtoObjt]);
-    }
-  }, [location.state]);
-  console.log('carrinho');
-  console.log(carrinho);
-
 
   useEffect(() => {
     var requestOptions = {
@@ -35,8 +23,18 @@ function MainPage() {
       });
   }, []);
 
+  useEffect(() => {
+    if (sessionStorage.getItem('carrinho')) {
+      setCarrinho(JSON.parse(sessionStorage.getItem('carrinho')));
+    } 
+  }, []);
+  console.log('carrinho');
+  console.log(carrinho);
+
+
   const handleOnClickToProd = (index) => {
     sessionStorage.setItem('produto', JSON.stringify(posts[index]));
+    sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
     window.location.href = './Produto';
   };
 
