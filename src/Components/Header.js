@@ -4,8 +4,16 @@ import name from '../img/nome2.png';
 import shopping_cart from '../img/shopping-cart.png';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 function Header() {
+
+
+  const handleOnClickToCart = () => {
+    window.location.href = './Cart';
+
+  };
 
   const handleOnClickToLog = () => {
     window.location.href = './Login';
@@ -80,7 +88,7 @@ function Header() {
         </Dropdown>
       </div>
       <div className="btnLog">
-        <img className="imgSoppingCart" alt="Imagem do carrinho de compras" src={shopping_cart} />
+        <img className="imgShoppingCart" alt="Imagem do carrinho de compras" src={shopping_cart} onClick={handleOnClickToCart} />
         <button className="buttonSignMainPage" onClick={handleOnClickToSign}>
           Sign up
         </button>
