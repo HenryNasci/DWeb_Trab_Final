@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function Produto() {
     const navigate = useNavigate();
 
+    //adiciona o produto atual ao carrinho //verifica se já existe um carrinho, se existir, o prod. é adicionado, se não, cria um carrinho
     const handleOnClickAddCarrinho = (post) => {
         const carrinho = JSON.parse(sessionStorage.getItem('carrinho'));
         if (carrinho) {

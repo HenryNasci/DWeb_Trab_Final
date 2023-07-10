@@ -9,20 +9,22 @@ import { useNavigate } from 'react-router-dom';
 
 function Header() {
 
-
+  //rederecionar para a página do carrinho
   const handleOnClickToCart = () => {
     window.location.href = './Cart';
-
   };
 
+  //rederecionar para a página de sign in
   const handleOnClickToLog = () => {
     window.location.href = './Login';
   };
 
+  //rederecionar para a página de sign up
   const handleOnClickToSign = () => {
     window.location.href = './CreateUser';
   };
 
+  //rederecionar para a página inicial
   const handleOnClickToMain = () => {
     window.location.href = './';
   };
