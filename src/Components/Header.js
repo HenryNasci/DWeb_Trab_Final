@@ -75,19 +75,7 @@ function Header({ handleGetCategoria }) {
             <Dropdown.Item onClick={() => handleGetCategoria("Brooms")}>Brooms</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <Dropdown className="dropdownMainPage">
-          <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
-            BRANDS
-          </Dropdown.Toggle>
 
-          <Dropdown.Menu>
-            <Dropdown.Item onClick={() => handleGetCategoria("Horze")}>Horze</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleGetCategoria("Jumpin")}>Jumpin</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleGetCategoria("Kingsland")}>Kingsland</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleGetCategoria("Harcour")}>Harcour</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleGetCategoria("Eskadron")}>Veredus</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
       </div>
       <div className="btnLog">
         <img className="imgShoppingCart" alt="Imagem do carrinho de compras" src={shopping_cart} onClick={handleOnClickToCart} />

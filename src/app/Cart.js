@@ -36,6 +36,7 @@ function CartPage() {
             <Header />
             <div className="bodyCart">
                 <h1 className='tituloCart'>Shopping Cart</h1>
+                <p className="cartTotalPrice">Total: {totalPrice}€</p>
                 {cartItems.length === 0 ? (
                     <p className='cartVazio'>Cart is empty.</p>
                 ) : (
@@ -50,12 +51,10 @@ function CartPage() {
                                         <p className="cartItemBrand">{item.marca}</p>
                                         <p className="cartItemPrice">{item.preco}€</p>
                                     </div>
+                                    <button className='butRemove' onClick={() => handleRemoveItem(index)}>Remove</button>
                                 </div>
-                                <button onClick={() => handleRemoveItem(index)}>Remove</button>
                             </div>
                         ))}
-                        <p className="cartTotalPrice">Total: {totalPrice}€</p>
-
                     </div>
                 )}
             </div>
