@@ -81,11 +81,11 @@ function Header({ handleGetCategoria }) {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item>Horze</Dropdown.Item>
-            <Dropdown.Item>Jumpin</Dropdown.Item>
-            <Dropdown.Item>Kingsland</Dropdown.Item>
-            <Dropdown.Item>Harcour</Dropdown.Item>
-            <Dropdown.Item>Eskadron</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Horze")}>Horze</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Jumpin")}>Jumpin</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Kingsland")}>Kingsland</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Harcour")}>Harcour</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Eskadron")}>Eskadron</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </div>
