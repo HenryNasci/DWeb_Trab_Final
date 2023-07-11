@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../Components/Header';
+import './Cart.css';
 
 
 function CartPage() {
@@ -31,17 +32,16 @@ function CartPage() {
     };
 
     return (
-        <div className="baseMainPage">
+        <div className="baseCart">
             <Header />
-            <div className="cartPage">
-                <br></br><br></br><br></br><br></br>
-                <h1>Carrinho de Compras</h1>
+            <div className="bodyCart">
+                <h1 className='tituloCart'>Shopping Cart</h1>
                 {cartItems.length === 0 ? (
-                    <p>O carrinho está vazio.</p>
+                    <p className='cartVazio'>Cart is empty.</p>
                 ) : (
                     <div className="cartItems">
                         {cartItems.map((item, index) => (
-                            <li key={index} className="cartItem">
+                            <div key={index} className="cartItem">
                                 <div className="cartItemInfo">
                                     <img align="left" className="imgProdutoMainPage" alt="Imagem do Produto" src={"https://localhost:7085/imagens/" + item.fotos[0].nomeFicheiro} />
                                     <br></br><br></br><br></br><br></br>
@@ -51,8 +51,8 @@ function CartPage() {
                                         <p className="cartItemPrice">{item.preco}€</p>
                                     </div>
                                 </div>
-                                <button onClick={() => handleRemoveItem(index)}>Remover</button>
-                            </li>
+                                <button onClick={() => handleRemoveItem(index)}>Remove</button>
+                            </div>
                         ))}
                         <p className="cartTotalPrice">Total: {totalPrice}€</p>
 
