@@ -3,10 +3,11 @@ import logo from '../img/Logo_v2.png';
 import name from '../img/nome2.png';
 import shopping_cart from '../img/shopping-cart.png';
 import Dropdown from 'react-bootstrap/Dropdown';
-//import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Components/AuthContext';
 
 function Header({ handleGetCategoria }) {
-  //const navigate = useNavigate();
+  
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   //rederecionar para a página do carrinho
   const handleOnClickToCart = () => {
@@ -27,6 +28,11 @@ function Header({ handleGetCategoria }) {
   const handleOnClickToMain = () => {
     sessionStorage.setItem('categoria', '');
     window.location.href = './';
+  };
+
+  //fazer logout
+  const handleLogOut = () => {
+    setIsLoggedIn(false);
   };
 
   return (
@@ -79,12 +85,20 @@ function Header({ handleGetCategoria }) {
       </div>
       <div className="btnLog">
         <img className="imgShoppingCart" alt="Imagem do carrinho de compras" src={shopping_cart} onClick={handleOnClickToCart} />
-        <button className="buttonSignMainPage" onClick={handleOnClickToSign}>
-          Sign up
-        </button>
-        <button className="buttonLogMainPage" onClick={handleOnClickToLog}>
-          Login
-        </button>
+        {isLoggedIn ? (
+          <button className="buttonLogMainPage" onClick={handleLogOut}>
+            Logout
+          </button>
+        ) : (
+          <>
+            <button className="buttonSignMainPage" onClick={handleOnClickToSign}>
+              Sign up
+            </button>
+            <button className="buttonLogMainPage" onClick={handleOnClickToLog}>
+              Login
+            </button>
+          </>
+        )}
       </div>
     </div>
   )

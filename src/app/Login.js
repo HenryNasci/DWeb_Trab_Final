@@ -1,82 +1,93 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import logo from '../img/Logo_v2.png';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Components/AuthContext';
 
-class Login extends Component {
+function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { setIsLoggedIn } = useAuth();
+    const { setUser } = useAuth();
+    const navigate = useNavigate();
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: '',
-            password: ''
-        }
-    }
+    const handleCheckEmail = (event) => {
+        setEmail(event.target.value);
+    };
 
-    handleCheckUsername = (event) => {
-        this.setState({ username: event.target.value });
-        console.log(this.state.username);
-    }
+    const handleCheckpasswd = (event) => {
+        setPassword(event.target.value);
+    };
 
-    handleCheckpasswd = (event) => {
-        this.setState({ password: event.target.value });
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            if (email === '' || password === '') {
+                alert('Dados em falta');
+            } else {
+                const response = await fetch('api/Login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password,
+                    }),
+                });
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        fetch('https://localhost:7085/Clientes', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username: this.state.username,
-                passwd: this.state.password
-            })
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 200) {
-                    console.log('User logged in successfully!');
-                    window.location.href = './';
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        alert('Utilizador não encontrado');
+                    } else if (response.status === 401) {
+                        alert('A password está incorreta');
+                    } else {
+                        throw new Error('Erro ao efetuar o login');
+                    }
                 } else {
-                    console.log('Error logging in!');
+                    const data = await response.json();
+                    setUser(data);
+                    setIsLoggedIn(true);
+                    navigate('../');
                 }
-            })
-            .catch(error => {
-                console.log('Error logging in!');
-            });
-    }
-    
-    handleOnClickToMain() {
+            }
+        } catch (error) {
+            console.error(error);
+            alert('Ocorreu um erro ao efetuar o login');
+        }
+    };
+
+    const handleOnClickToMain = () => {
         window.location.href = './';
-    }
+    };
 
-    render() {
-        return (
-            <div className="baseLog">
-                <div className="LOGIN">
-                    <img className='imgLogoLogin' alt='Imagem da Página Login' src={logo} onClick={this.handleOnClickToMain}></img>
-                    <div className='login'>
-                        <h1 style={{ color: 'white' }}>LOG IN</h1>
-                        <form >
-                            <div className='divTxtLogin'>
-                                <b><p className='paragLogin'>  </p></b>
-                                <b><p className='paragLogin'>  </p></b>
-                            </div>
-                            <div className='divInputsLogin'>
-                                <input className='inputLogin' type='text' placeholder='Username' onChange={this.handleCheckUsername}></input>
-                                <input className='inputLogin' type='password' placeholder='Password' onChange={this.handleCheckpasswd}></input>
-                            </div>
-                            <button className='buttonLogin' type='submit' >Log in</button>
-                        </form>
+    return (
+        <div className="baseLog">
+            <div className="LOGIN">
+                <img className="imgLogoLogin" alt="Imagem da Página Login" src={logo} onClick={handleOnClickToMain} />
+                <div className="login">
+                    <h1 style={{ color: 'white' }}>LOG IN</h1>
+                    <form onSubmit={handleSubmit}>
+                        <div className="divTxtLogin">
+                            <b>
+                                <p className="paragLogin"> </p>
+                            </b>
+                            <b>
+                                <p className="paragLogin"> </p>
+                            </b>
+                        </div>
+                        <div className="divInputsLogin">
+                            <input className="inputLogin" type="text" placeholder="Email" onChange={handleCheckEmail} />
+                            <input className="inputLogin" type="password" placeholder="Password" onChange={handleCheckpasswd} />
+                        </div>
+                        <button className="buttonLogin" type="submit">Log in</button>
+                    </form>
 
-                        <a href='./CreateUser' style={{ color: 'white' }}>Don't have an acount?</a>
-                    </div>
+                    <a href="./CreateUser" style={{ color: 'white' }}>Don't have an account?</a>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
-
 
 export default Login;
