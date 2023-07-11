@@ -3,14 +3,15 @@ import './MainPage.css';
 import Header from '../Components/Header';
 import Info from '../Components/Info';
 
-
 function MainPage() {
   //posts vai ser preenchido com os dados dos produtos
   const [posts, setPosts] = useState([]);
   //carrinho vai ser preenchido com os produtos
   const [carrinho, setCarrinho] = useState([]);
+  //categoria vai ser preenchido com a categoria selecionada
+  const [categoria, setCategoria] = useState('');
 
-  //obter dados dos produtos //request GET na rota api/ProdutosController2 //dados armazenados em "posts"
+  //obter dados dos produtos //request GET na rota api/ProdutosController2 
   useEffect(() => {
     var requestOptions = {
       method: 'GET',
@@ -19,7 +20,6 @@ function MainPage() {
     fetch("api/ProdutosController2", requestOptions)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setPosts(data);
       })
       .catch((err) => {
@@ -27,14 +27,12 @@ function MainPage() {
       });
   }, []);
 
-  //verificar se há um carrinho na sessão 
+  //verificar se há um carrinho na sessão
   useEffect(() => {
     if (sessionStorage.getItem('carrinho')) {
       setCarrinho(JSON.parse(sessionStorage.getItem('carrinho')));
     }
   }, []);
-  console.log('carrinho');
-  console.log(carrinho);
 
   //armazenar dados do produto selecionado, rederecionar para a página do produto
   const handleOnClickToProd = (index) => {
@@ -43,13 +41,31 @@ function MainPage() {
     window.location.href = './Produto';
   };
 
+  //verificar se há uma categoria na sessão 
+  useEffect(() => {
+    if (sessionStorage.getItem('categoria')) {
+      setCategoria(sessionStorage.getItem('categoria'));
+    }
+  }, []);
+
+  // Filtrar os produtos com base na categoria selecionada
+  const produtosFiltrados = categoria
+    ? posts.filter((post) => post.categoria.nome === categoria)
+    : posts;
+
+   //armazenar dados da categoria selecionada, rederecionar para a página inicial
+  const handleGetCategoria = (catNome) => {
+    sessionStorage.setItem('categoria', catNome);
+    window.location.href = './';
+  };
+
   return (
     <div className="baseMainPage">
-      <Header />
+      <Header handleGetCategoria={handleGetCategoria} />
       <div className="bodyMainPage">
         <div className="divProdutosMainPage">
-          {posts.map((post, index) => (
-            <div className="divProdutoMainPage" onClick={() => handleOnClickToProd(index)}>
+          {produtosFiltrados.map((post, index) => (
+            <div className="divProdutoMainPage" onClick={() => handleOnClickToProd(index)} key={post.id} >
               <img className="imgProdutoMainPage" alt="Imagem do Produto" src={"https://localhost:7085/imagens/" + post.fotos[0].nomeFicheiro} />
               <div className="divInfoProdutoMainPage">
                 <p className="nomeProdutoMainPage">{post.nome}</p>
@@ -65,6 +81,6 @@ function MainPage() {
       </div>
     </div>
   );
-};
+}
 
 export default MainPage;

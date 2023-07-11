@@ -3,11 +3,10 @@ import logo from '../img/Logo_v2.png';
 import name from '../img/nome2.png';
 import shopping_cart from '../img/shopping-cart.png';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
-
-function Header() {
+function Header({ handleGetCategoria }) {
+  //const navigate = useNavigate();
 
   //rederecionar para a página do carrinho
   const handleOnClickToCart = () => {
@@ -26,6 +25,7 @@ function Header() {
 
   //rederecionar para a página inicial
   const handleOnClickToMain = () => {
+    sessionStorage.setItem('categoria', '');
     window.location.href = './';
   };
 
@@ -42,12 +42,12 @@ function Header() {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item>Boots</Dropdown.Item>
-            <Dropdown.Item>Men's Helmets</Dropdown.Item>
-            <Dropdown.Item>Women's Helmets</Dropdown.Item>
-            <Dropdown.Item>Men's Breeches</Dropdown.Item>
-            <Dropdown.Item>Women's Breeches</Dropdown.Item>
-            <Dropdown.Item>Belts</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Boots")}>Boots</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Men's Helmets")}>Men's Helmets</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Women's Helmets")}>Women's Helmets</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Men's Breeches")}>Men's Breeches</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Women's Breeches")}>Women's Breeches</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Belts")}>Belts</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <Dropdown className="dropdownMainPage">
@@ -56,11 +56,11 @@ function Header() {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item>Saddle</Dropdown.Item>
-            <Dropdown.Item>Saddle Pads</Dropdown.Item>
-            <Dropdown.Item>Tendon Boots</Dropdown.Item>
-            <Dropdown.Item>Rugs</Dropdown.Item>
-            <Dropdown.Item>Bridles</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Saddle")}>Saddle</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Saddle Pads")}>Saddle Pads</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Tendon Boots")}>Tendon Boots</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Rugs")}>Rugs</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Bridles")}>Bridles</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <Dropdown className="dropdownMainPage">
@@ -69,10 +69,10 @@ function Header() {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item>Forks</Dropdown.Item>
-            <Dropdown.Item>Shovels</Dropdown.Item>
-            <Dropdown.Item>Hay nets</Dropdown.Item>
-            <Dropdown.Item>Brooms</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Forks")}>Forks</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Shovels")}>Shovels</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Hay nets")}>Hay nets</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Brooms")}>Brooms</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <Dropdown className="dropdownMainPage">

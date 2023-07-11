@@ -15,13 +15,10 @@ function Produto() {
         } else {
             sessionStorage.setItem('carrinho', JSON.stringify([post]));
         }
-        console.log('carrinho');
-        console.log(carrinho);
         navigate('/');
     };
 
     const post = JSON.parse(sessionStorage.getItem('produto'));
-    console.log(post);
 
     return (
         <div className="baseProduto">
