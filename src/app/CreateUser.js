@@ -93,7 +93,7 @@ function CreateUser() {
     };
 
     try {
-      const response = await fetch('api/register', {
+      const response = await fetch('https://localhost:7085/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
