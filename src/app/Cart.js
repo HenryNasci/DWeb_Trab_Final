@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../Components/Header';
 import './Cart.css';
+import { useAuth } from '../Components/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 
 function CartPage() {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
+    const { isLoggedIn } = useAuth();
+    const navigate = useNavigate();
 
     //vai buscar os dados armazenados do cart
     useEffect(() => {
@@ -31,12 +35,22 @@ function CartPage() {
         sessionStorage.setItem('carrinho', JSON.stringify(updatedCartItems));
     };
 
+    //pagamento
+    const handlePay = () => {
+        if (isLoggedIn) {
+            alert('Payment successful!');
+        } else {
+            navigate('/Login');
+        }
+    };
+
     return (
         <div className="baseCart">
             <Header />
             <div className="bodyCart">
                 <h1 className='tituloCart'>Shopping Cart</h1>
                 <p className="cartTotalPrice">Total: {totalPrice}€</p>
+                <button className='butPay' onClick={() => handlePay()}>Payment</button>
                 {cartItems.length === 0 ? (
                     <p className='cartVazio'>Cart is empty.</p>
                 ) : (

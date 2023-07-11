@@ -78,3 +78,23 @@
 .tituloCart {
     margin: 15px 200px;
 }
+
+.butPay {
+    background-color: #d3d3d3;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: black;
+    margin-right: 13%;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    align: center;
+    float: right;
+}
+
+.butPay:hover {
+    background-color: #00ff00;
+    color: #FFF;
+}
