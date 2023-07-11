@@ -1,3 +1,46 @@
+.baseCart {
+    background-color: #798aa4;
+    width: 100%;
+    height: 100vh;
+}
+
+.bodyCart {
+
+    background-color: #798aa4;
+    width: 100%;
+    padding-top: 10%;
+    padding-left: 5%;
+}
+
 .cartItemInfo {
-    margin: 29px
+    background: #d3d3d3;
+    color: #FFF;
+    padding: 20px;
+    border: 1px solid #000;
+}
+
+.imgProdutoMainPage {
+    display: inline;
+}
+
+.cartItemText {
+    text-align: left;
+    vertical-align: top;
+    padding-left: 25%;
+    margin-top: -20px;
+    color: #000;
+
+}
+
+.cartTotalPrice {
+    background-color: #d3d3d3;
+    border: 2px solid black;
+    color: black;
+    margin-top: 10px;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    align: center;
 }

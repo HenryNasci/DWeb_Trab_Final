@@ -85,7 +85,7 @@ function Header({ handleGetCategoria }) {
             <Dropdown.Item onClick={() => handleGetCategoria("Jumpin")}>Jumpin</Dropdown.Item>
             <Dropdown.Item onClick={() => handleGetCategoria("Kingsland")}>Kingsland</Dropdown.Item>
             <Dropdown.Item onClick={() => handleGetCategoria("Harcour")}>Harcour</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleGetCategoria("Eskadron")}>Eskadron</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleGetCategoria("Eskadron")}>Veredus</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </div>

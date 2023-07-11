@@ -36,6 +36,12 @@ function MainPage() {
 
   //armazenar dados do produto selecionado, rederecionar para a página do produto
   const handleOnClickToProd = (index) => {
+    for (let i = 0; i < posts.length; i++) {
+      if (posts[i].id === index) {
+        index = i;
+      }
+    }
+    console.log('index', index);
     sessionStorage.setItem('produto', JSON.stringify(posts[index]));
     sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
     window.location.href = './Produto';
@@ -53,19 +59,20 @@ function MainPage() {
     ? posts.filter((post) => post.categoria.nome === categoria)
     : posts;
 
-   //armazenar dados da categoria selecionada, rederecionar para a página inicial
+  //armazenar dados da categoria selecionada, rederecionar para a página inicial
   const handleGetCategoria = (catNome) => {
     sessionStorage.setItem('categoria', catNome);
     window.location.href = './';
   };
+  console.log('posts', posts);
 
   return (
     <div className="baseMainPage">
       <Header handleGetCategoria={handleGetCategoria} />
       <div className="bodyMainPage">
         <div className="divProdutosMainPage">
-          {produtosFiltrados.map((post, index) => (
-            <div className="divProdutoMainPage" onClick={() => handleOnClickToProd(index)} key={post.id} >
+          {produtosFiltrados.map((post) => (
+            <div className="divProdutoMainPage" onClick={() => handleOnClickToProd(post.id)} key={post.id} >
               <img className="imgProdutoMainPage" alt="Imagem do Produto" src={"https://localhost:7085/imagens/" + post.fotos[0].nomeFicheiro} />
               <div className="divInfoProdutoMainPage">
                 <p className="nomeProdutoMainPage">{post.nome}</p>
