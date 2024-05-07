@@ -1,0 +1,45 @@
+/* UserPage.css */
+
+.baseMainPage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bodyMainPage {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .divUserPageParent {
+    width: 60%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .divUserPage {
+    margin-bottom: 20px;
+  }
+  
+  .h1UserPage {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .divInfo {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .h2Info {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para o componente Info podem ser adicionados aqui se necessário */

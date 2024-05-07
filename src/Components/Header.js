@@ -8,7 +8,8 @@ import { useAuth } from '../Components/AuthContext';
 function Header({ handleGetCategoria }) {
   
   const { isLoggedIn, setIsLoggedIn } = useAuth();
-
+  const { user, setUser } = useAuth();
+  
   //rederecionar para a página do carrinho
   const handleOnClickToCart = () => {
     window.location.href = './Cart';
@@ -28,6 +29,11 @@ function Header({ handleGetCategoria }) {
   const handleOnClickToMain = () => {
     sessionStorage.setItem('categoria', '');
     window.location.href = './';
+  };
+
+  //rederecionar para a página do user
+  const handleOnClickToUserPage = () => {
+    window.location.href = './UserPage';
   };
 
   //fazer logout
@@ -86,9 +92,14 @@ function Header({ handleGetCategoria }) {
       <div className="btnLog">
         <img className="imgShoppingCart" alt="Imagem do carrinho de compras" src={shopping_cart} onClick={handleOnClickToCart} />
         {isLoggedIn ? (
-          <button className="buttonLogMainPage" onClick={handleLogOut}>
-            Logout
-          </button>
+          <>
+            <button className="buttonUser" onClick={handleOnClickToUserPage}>
+              {user.person.nome}
+            </button>
+            <button className="buttonLogMainPage" onClick={handleLogOut}>
+              Logout
+            </button>
+          </>
         ) : (
           <>
             <button className="buttonSignMainPage" onClick={handleOnClickToSign}>

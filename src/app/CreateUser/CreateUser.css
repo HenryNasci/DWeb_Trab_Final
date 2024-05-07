@@ -1,27 +1,28 @@
-.baseLog {
-    background: url(../img/background1.jpg);
+.baseCreateUser {
+    background: url(../../img/background1.jpg);
     background-size: 1920px 1080px;
     width: 100vw;
     height: 100vh;
     display: flex;
 }
 
-.LOGIN {
+.CreateUser {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #726e68;
-    width: 800px;
-    height: 330px;
+    width: 850px;
+    height: 570px;
     margin: 0px auto;
-    margin-top: 13%;
+    margin-top: 10%;
     background: transparent;
     border: 2px solid;
     border-radius: 20px;
     backdrop-filter: blur(20px);
 }
 
-.buttonLogin {
+.buttonCreateUser {
+    margin: 10px 200px;
     border-radius: 0px;
     width: 100px;
     height: 35px;
@@ -32,28 +33,29 @@
     justify-content: center;
 }
 
-.divTxtLogin {
-    width: 0px;
+.divTxtCreateUser {
+    width: 200px;
     float: left;
     text-align: center;
     margin: 20px 0px;
 }
 
-.divInputsLogin {
-    width: 300px;
+.divInputsCreateUser {
+    width: 400px;
     float: left;
     text-align: center;
-    margin: 20px 75px;
+    margin: 20px 50px;
 }
 
-.imgLogoLogin {
+
+.imgLogoCreateUser {
     width: 300px;
     float: left;
-    margin: 59px 15px;
+    margin: 109px 15px;
     cursor: pointer;
 }
 
-.inputLogin {
+.inputCreateUser {
     border-left: none;
     border-top: none;
     border-right: none;
@@ -61,35 +63,27 @@
     border-color: aliceblue;
     position: relative;
     outline: none;
-    margin: 4px;
-    width: 100%;
+    margin: 5px;
+    width: 300px;
     height: 40px;
     font-size: 20px;
     background: transparent;
-
 }
 
-.login {
-    width: 450px;
+.signIn {
+    width: 500px;
     float: left;
     text-align: center;
     margin: 20px 0px;
 }
 
-.paragLogin {
-    margin: 10px 0px 20px 80px;
-    font-size: 18px;
+.paragCreateUser {
+    margin: 8.5px 0px 20px 0px;
+    font-size: 20px;
     color: white;
-    background: transparent;
-
 }
 
-.inputLogin {
-    position: relative;
-    width: 100%;
-}
-
-.inputLogin {
+.inputCreateUser {
     color: aliceblue;
 }
 

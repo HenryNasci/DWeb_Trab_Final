@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './MainPage.css';
-import Header from '../Components/Header';
-import Info from '../Components/Info';
+import Header from '../../Components/Header';
+import Info from '../../Components/Info';
 
 function MainPage() {
   //posts vai ser preenchido com os dados dos produtos

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../Components/Header';
+import Header from '../../Components/Header';
 import './Cart.css';
-import { useAuth } from '../Components/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../Components/AuthContext';
+//import { useNavigate } from 'react-router-dom';
 
 
 function CartPage() {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const { isLoggedIn } = useAuth();
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
 
     //vai buscar os dados armazenados do cart
     useEffect(() => {
@@ -40,13 +40,18 @@ function CartPage() {
         if (isLoggedIn) {
             alert('Payment successful!');
         } else {
-            navigate('/Login');
+            window.location.href = './Login';
         }
     };
 
+    const handleGetCategoria = (catNome) => {
+        sessionStorage.setItem('categoria', catNome);
+        window.location.href = './';
+      };
+
     return (
         <div className="baseCart">
-            <Header />
+            <Header handleGetCategoria={handleGetCategoria} />
             <div className="bodyCart">
                 <h1 className='tituloCart'>Shopping Cart</h1>
                 <p className="cartTotalPrice">Total: {totalPrice}€</p>

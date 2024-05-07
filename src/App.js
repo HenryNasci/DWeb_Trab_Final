@@ -1,10 +1,11 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainPage from './app/MainPage';
-import Login from './app/Login';
-import CreateUser from './app/CreateUser';
-import Produto from './app/Produto';
-import Cart from './app/Cart';
+import MainPage from './app/MainPage/MainPage';
+import Login from './app/Login/Login';
+import CreateUser from './app/CreateUser/CreateUser';
+import Produto from './app/Produto/Produto';
+import Cart from './app/Cart/Cart';
+import UserPage from './app/UserPage/UserPage';
 import { AuthProvider } from './Components/AuthContext';
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/CreateUser" element={<CreateUser />} />
         <Route path="/Produto" element={<Produto />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/UserPage" element={<UserPage />} />
       </Routes>
       </AuthProvider>
     </BrowserRouter>

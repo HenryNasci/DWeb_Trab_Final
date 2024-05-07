@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './CreateUser.css';
-import logo from '../img/Logo_v2.png';
+import logo from '../../img/Logo_v2.png';
 import { useNavigate } from 'react-router-dom';
 
 function CreateUser() {

@@ -1,6 +1,6 @@
 import './Produto.css';
-import Header from '../Components/Header';
-import Info from '../Components/Info';
+import Header from '../../Components/Header';
+import Info from '../../Components/Info';
 import { useNavigate } from 'react-router-dom';
 
 function Produto() {
@@ -18,11 +18,16 @@ function Produto() {
         navigate('/');
     };
 
+    const handleGetCategoria = (catNome) => {
+        sessionStorage.setItem('categoria', catNome);
+        window.location.href = './';
+      };
+
     const post = JSON.parse(sessionStorage.getItem('produto'));
 
     return (
         <div className="baseProduto">
-            <Header />
+            <Header handleGetCategoria={handleGetCategoria} />
             <div className="bodyProduto">
                 <div className="divImgProduto">
                     <img className='imgProduto' alt='Imagem da Página Produto' src={"https://localhost:7085/imagens/" + post.fotos[0].nomeFicheiro}></img>

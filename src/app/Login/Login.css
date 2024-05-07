@@ -1,28 +1,27 @@
-.baseCreateUser {
-    background: url(../img/background1.jpg);
+.baseLog {
+    background: url(../../img/background1.jpg);
     background-size: 1920px 1080px;
     width: 100vw;
     height: 100vh;
     display: flex;
 }
 
-.CreateUser {
+.LOGIN {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #726e68;
-    width: 850px;
-    height: 570px;
+    width: 800px;
+    height: 330px;
     margin: 0px auto;
-    margin-top: 10%;
+    margin-top: 13%;
     background: transparent;
     border: 2px solid;
     border-radius: 20px;
     backdrop-filter: blur(20px);
 }
 
-.buttonCreateUser {
-    margin: 10px 200px;
+.buttonLogin {
     border-radius: 0px;
     width: 100px;
     height: 35px;
@@ -33,29 +32,28 @@
     justify-content: center;
 }
 
-.divTxtCreateUser {
-    width: 200px;
+.divTxtLogin {
+    width: 0px;
     float: left;
     text-align: center;
     margin: 20px 0px;
 }
 
-.divInputsCreateUser {
-    width: 400px;
-    float: left;
-    text-align: center;
-    margin: 20px 50px;
-}
-
-
-.imgLogoCreateUser {
+.divInputsLogin {
     width: 300px;
     float: left;
-    margin: 109px 15px;
+    text-align: center;
+    margin: 20px 75px;
+}
+
+.imgLogoLogin {
+    width: 300px;
+    float: left;
+    margin: 59px 15px;
     cursor: pointer;
 }
 
-.inputCreateUser {
+.inputLogin {
     border-left: none;
     border-top: none;
     border-right: none;
@@ -63,27 +61,35 @@
     border-color: aliceblue;
     position: relative;
     outline: none;
-    margin: 5px;
-    width: 300px;
+    margin: 4px;
+    width: 100%;
     height: 40px;
     font-size: 20px;
     background: transparent;
+
 }
 
-.signIn {
-    width: 500px;
+.login {
+    width: 450px;
     float: left;
     text-align: center;
     margin: 20px 0px;
 }
 
-.paragCreateUser {
-    margin: 8.5px 0px 20px 0px;
-    font-size: 20px;
+.paragLogin {
+    margin: 10px 0px 20px 80px;
+    font-size: 18px;
     color: white;
+    background: transparent;
+
 }
 
-.inputCreateUser {
+.inputLogin {
+    position: relative;
+    width: 100%;
+}
+
+.inputLogin {
     color: aliceblue;
 }
 
