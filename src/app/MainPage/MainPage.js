@@ -17,7 +17,7 @@ function MainPage() {
       method: 'GET',
       redirect: 'follow'
     };
-    fetch("api/ProdutosController2", requestOptions)
+    fetch("api/ProdutosController2", requestOptions) //promisse
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);
