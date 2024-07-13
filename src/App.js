@@ -6,6 +6,8 @@ import CreateUser from './app/CreateUser/CreateUser';
 import Produto from './app/Produto/Produto';
 import Cart from './app/Cart/Cart';
 import UserPage from './app/UserPage/UserPage';
+import NotFound from './app/NotFound/NotFound';
+import PrivateRoute from './Components/PrivateRoute';
 import { AuthProvider } from './Components/AuthContext';
 
 
@@ -19,7 +21,14 @@ function App() {
         <Route path="/CreateUser" element={<CreateUser />} />
         <Route path="/Produto" element={<Produto />} />
         <Route path="/Cart" element={<Cart />} />
-        <Route path="/UserPage" element={<UserPage />} />
+        <Route 
+          path="/UserPage" 
+          element={
+            <PrivateRoute>
+              <UserPage />
+            </PrivateRoute>
+          } />
+          <Route path='*' element={<NotFound />} />
       </Routes>
       </AuthProvider>
     </BrowserRouter>

@@ -9,6 +9,13 @@ function UserPage() {
 
     const { user, setUser, isLoggedIn, setIsLoggedIn  } = useAuth();
 
+    // Se não estiver logado, redirecionar para a página de login
+    /*useEffect(() => {
+        if (!isLoggedIn) {
+            handleToLogIn();
+        }
+    }, [isLoggedIn]);*/
+
     //armazenar dados da categoria selecionada, rederecionar para a página inicial
     const handleGetCategoria = (catNome) => {
         sessionStorage.setItem('categoria', catNome);
@@ -19,13 +26,6 @@ function UserPage() {
     const handleToLogIn = () => {
         window.location.href = './Login';
     };
-
-    // Se não estiver logado, redirecionar para a página de login
-    useEffect(() => {
-        if (!isLoggedIn) {
-            handleToLogIn();
-        }
-    }, [isLoggedIn]);
 
     return (
         <div className="baseMainPage">
