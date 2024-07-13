@@ -8,15 +8,13 @@ import { useAuth } from '../../Components/AuthContext';
 function CartPage() {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
-    const { isLoggedIn } = useAuth();
+    const [shouldPay, setShouldPay] = useState(false);
+    const { user, isLoggedIn } = useAuth();
+    const [requestData, setRequestData] = useState({ Pago: true, ClientesFK: user.person.id });
     //const navigate = useNavigate();
-
     //vai buscar os dados armazenados do cart
     useEffect(() => {
-        const cartData = sessionStorage.getItem('carrinho');
-        if (cartData) {
-            setCartItems(JSON.parse(cartData));
-        }
+
         //  preço total
         let total = 0;
         if (cartItems.length > 0) {
@@ -25,20 +23,52 @@ function CartPage() {
         setTotalPrice(total);
     }, [cartItems]);
 
+    useEffect(() => {
+        const cartData = sessionStorage.getItem('carrinho');
+        if (cartData) {
+            setCartItems(JSON.parse(cartData));
+        }
+    }, []);
+    //obter dados dos produtos //request POST na rota api/ComprasController2 
+    useEffect(() => {
+        if (shouldPay) {
+
+            console.log('Request Data:', requestData);
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestData),
+                redirect: 'follow'
+            };
+            fetch("api/ComprasController2", requestOptions)
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log('Response Data:', data);
+                    alert('Product added successfully');
+                    setShouldPay(false); // Reset payment state
+                })
+                .catch((err) => {
+                    console.log('Error:', err.message);
+                    alert('Error adding product');
+                    setShouldPay(false); // Reset payment state in case of error
+                });
+        }
+    }, [shouldPay, user.person.id]);
 
     //remover artigo //splice remove o prod do array 
     const handleRemoveItem = (index) => {
         const updatedCartItems = [...cartItems];
         updatedCartItems.splice(index, 1);
         setCartItems(updatedCartItems);
-
         sessionStorage.setItem('carrinho', JSON.stringify(updatedCartItems));
     };
 
     //pagamento
     const handlePay = () => {
         if (isLoggedIn) {
-            alert('Payment successful!');
+            setShouldPay(true);
+            sessionStorage.removeItem('carrinho');
+            window.location.href = './';
         } else {
             window.location.href = './Login';
         }
@@ -47,7 +77,7 @@ function CartPage() {
     const handleGetCategoria = (catNome) => {
         sessionStorage.setItem('categoria', catNome);
         window.location.href = './';
-      };
+    };
 
     return (
         <div className="baseCart">
